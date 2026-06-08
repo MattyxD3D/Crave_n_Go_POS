@@ -1,0 +1,325 @@
+/* ── Shared admin utility styles ────────────────────────────────────────────
+   Imported globally via main.js — used by all admin views.
+   All selectors are prefixed to avoid bleeding into cashier/landing views.
+   ────────────────────────────────────────────────────────────────────────── */
+
+/* ── Page shell ─────────────────────────────────────────────────────────── */
+.a-page { padding: 2rem; max-width: 1200px; }
+
+.a-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.75rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.a-page-title {
+  font-family: 'Fredoka One', system-ui, sans-serif;
+  font-size: 1.75rem;
+  font-weight: 400;
+  color: var(--color-text);
+  margin: 0;
+  line-height: 1;
+}
+
+/* ── Buttons ────────────────────────────────────────────────────────────── */
+.a-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1.25rem;
+  border-radius: var(--radius-sm);
+  border: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  min-height: var(--touch-min);
+  transition: background 0.15s, opacity 0.15s, transform 0.1s;
+  white-space: nowrap;
+}
+.a-btn:active { transform: scale(0.97); }
+.a-btn:disabled { opacity: 0.55; cursor: not-allowed; transform: none; }
+
+.a-btn-primary {
+  background: var(--color-primary);
+  color: #fff;
+  box-shadow: 0 3px 10px rgba(185,28,28,0.25);
+}
+.a-btn-primary:hover:not(:disabled) { background: var(--color-primary-dark); }
+
+.a-btn-secondary {
+  background: var(--color-surface);
+  color: var(--color-text);
+  border: 1.5px solid var(--color-border);
+}
+.a-btn-secondary:hover:not(:disabled) {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.a-btn-danger {
+  background: var(--color-danger);
+  color: #fff;
+}
+.a-btn-danger:hover:not(:disabled) { opacity: 0.88; }
+
+.a-btn-sm {
+  padding: 0.25rem 0.75rem;
+  font-size: 0.8rem;
+  min-height: 32px;
+}
+
+.a-btn-icon {
+  background: transparent;
+  border: none;
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  transition: color 0.15s, background 0.15s;
+  min-height: unset;
+}
+.a-btn-icon:hover { color: var(--color-danger); background: var(--color-danger-bg); }
+
+/* ── Alerts ─────────────────────────────────────────────────────────────── */
+.a-alert-error {
+  background: var(--color-danger-bg);
+  border: 1.5px solid var(--color-primary-light);
+  color: var(--color-danger);
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-sm);
+  margin-bottom: 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* ── Badges ─────────────────────────────────────────────────────────────── */
+.a-badge {
+  display: inline-block;
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+.a-badge-success { background: var(--color-success-bg); color: var(--color-success); }
+.a-badge-danger  { background: var(--color-danger-bg);  color: var(--color-danger);  }
+.a-badge-warning { background: var(--color-warning-bg); color: var(--color-warning); }
+.a-badge-muted   { background: var(--color-surface-2);  color: var(--color-text-muted); border: 1px solid var(--color-border); }
+
+/* ── Stat cards row ─────────────────────────────────────────────────────── */
+.a-stats-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+  flex-wrap: wrap;
+}
+
+.a-stat-card {
+  background: var(--color-surface);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  flex: 1;
+  min-width: 140px;
+  box-shadow: var(--shadow-card);
+  position: relative;
+  overflow: hidden;
+}
+
+.a-stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: var(--color-border);
+}
+
+.a-stat-card.primary::before { background: var(--color-primary); }
+.a-stat-card.warning::before { background: var(--color-accent); }
+.a-stat-card.danger::before  { background: var(--color-danger); }
+.a-stat-card.success::before { background: var(--color-success); }
+
+.a-stat-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+  margin-bottom: 0.4rem;
+}
+
+.a-stat-value {
+  font-family: 'Fredoka One', system-ui, sans-serif;
+  font-size: 2rem;
+  color: var(--color-text);
+  line-height: 1;
+}
+
+.a-stat-card.warning .a-stat-value { color: var(--color-warning); }
+.a-stat-card.danger  .a-stat-value { color: var(--color-danger);  }
+.a-stat-card.success .a-stat-value { color: var(--color-success); }
+.a-stat-card.primary .a-stat-value { color: var(--color-primary); }
+
+/* ── Table ──────────────────────────────────────────────────────────────── */
+.a-table-wrap {
+  background: var(--color-surface);
+  border-radius: var(--radius);
+  border: 1.5px solid var(--color-border);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+
+.a-table { width: 100%; border-collapse: collapse; }
+
+.a-table th {
+  background: var(--color-surface-2);
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-muted);
+  border-bottom: 1.5px solid var(--color-border);
+}
+
+.a-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text);
+  font-size: 0.9rem;
+  vertical-align: middle;
+}
+
+.a-table tr:last-child td { border-bottom: none; }
+.a-table tbody tr:hover td { background: var(--color-surface-2); }
+
+.a-table .td-name  { font-weight: 600; }
+.a-table .td-muted { color: var(--color-text-muted); font-size: 0.875rem; }
+.a-table .td-actions { display: flex; gap: 0.4rem; align-items: center; flex-wrap: wrap; }
+
+.a-table .empty-row {
+  text-align: center;
+  color: var(--color-text-muted);
+  padding: 3rem 1rem;
+  font-size: 0.9rem;
+}
+.a-table-loading {
+  text-align: center;
+  padding: 3rem;
+  color: var(--color-text-muted);
+}
+
+/* ── Modal ──────────────────────────────────────────────────────────────── */
+.a-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(28, 25, 23, 0.5);
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  padding: 1rem;
+}
+
+.a-modal-card {
+  background: var(--color-surface);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius);
+  width: 100%;
+  max-width: 520px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.a-modal-card.wide { max-width: 720px; }
+
+.a-modal-accent {
+  height: 5px;
+  background: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.a-modal-body { padding: 1.5rem; overflow-y: auto; flex: 1; }
+
+.a-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.a-modal-title {
+  font-family: 'Fredoka One', system-ui, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.a-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1.5px solid var(--color-border);
+}
+
+/* ── Form elements ──────────────────────────────────────────────────────── */
+.a-form { display: flex; flex-direction: column; gap: 0; }
+.a-form-row { display: flex; gap: 1rem; }
+.a-form-row .a-form-group { flex: 1; }
+.a-form-group { margin-bottom: 1rem; }
+.a-form-label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  margin-bottom: 0.375rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.a-required { color: var(--color-danger); }
+.a-form-hint { font-size: 0.8rem; color: var(--color-text-muted); margin-top: 0.3rem; }
+
+.a-check-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  color: var(--color-text);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.a-form-checkbox {
+  width: 1rem;
+  height: 1rem;
+  accent-color: var(--color-primary);
+  cursor: pointer;
+}
+
+.a-addons-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+  background: var(--color-surface-2);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem;
+}
+
+.a-addon-price { color: var(--color-text-muted); font-size: 0.78rem; }

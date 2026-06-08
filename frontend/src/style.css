@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Inter:wght@400;500;600;700&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --color-primary: #b91c1c;
+  --color-primary-dark: #991b1b;
+  --color-primary-light: #fecaca;
+  --color-bg: #fdf6e3;
+  --color-surface: #fff8ee;
+  --color-surface-2: #fef3c7;
+  --color-border: #e5d5b0;
+  --color-text: #1c1917;
+  --color-text-muted: #78716c;
+  --color-success: #15803d;
+  --color-success-bg: #dcfce7;
+  --color-danger: #b91c1c;
+  --color-danger-bg: #fee2e2;
+  --color-warning: #b45309;
+  --color-warning-bg: #fef3c7;
+  --color-accent: #f59e0b;
+  --color-check-a: #b91c1c;
+  --color-check-b: #fff8ee;
+  --radius: 14px;
+  --radius-sm: 8px;
+  --touch-min: 44px;
+  --shadow-card: 0 4px 24px rgba(28, 25, 23, 0.10);
+  --shadow-lg: 0 8px 40px rgba(28, 25, 23, 0.16);
+}
+
+html, body, #app {
+  height: 100%;
+  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-size: 16px;
+}
+
+button {
+  cursor: pointer;
+  min-height: var(--touch-min);
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background 0.15s, opacity 0.15s, transform 0.1s;
+}
+button:active { transform: scale(0.97); }
+
+input, select, textarea {
+  background: var(--color-surface);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-text);
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  width: 100%;
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+input:focus, select:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(185, 28, 28, 0.12);
+}
