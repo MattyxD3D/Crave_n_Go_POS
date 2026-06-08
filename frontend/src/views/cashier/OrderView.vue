@@ -1010,4 +1010,54 @@ onUnmounted(() => {
   cursor: not-allowed;
   box-shadow: none;
 }
+
+/* ── Mobile Optimization ─────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .order-view {
+    height: 100vh;
+  }
+
+  .header-bar {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 0.75rem 1rem;
+    gap: 0.75rem;
+  }
+
+  .main-area {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .menu-panel {
+    flex: 1;
+    min-height: 40vh;
+  }
+
+  .cart-panel {
+    height: 45vh;
+    border-left: none;
+    border-top: 2px solid var(--color-border);
+    flex-shrink: 0;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+
+  .cart-footer {
+    padding: 0.75rem 1rem;
+  }
+  
+  .total-amount {
+    font-size: 1.5rem;
+  }
+  
+  .place-order-btn {
+    min-height: 48px;
+    font-size: 1rem;
+    padding: 0.75rem;
+  }
+}
 </style>

@@ -323,3 +323,30 @@
 }
 
 .a-addon-price { color: var(--color-text-muted); font-size: 0.78rem; }
+
+/* ── Mobile Optimization ─────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .a-page {
+    padding: 1rem;
+  }
+  .a-form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+  .a-addons-grid {
+    grid-template-columns: 1fr;
+  }
+  .a-table-wrap {
+    overflow-x: auto;
+  }
+  .a-page-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .a-stats-row {
+    flex-direction: column;
+  }
+  .a-modal-card {
+    max-height: 95vh;
+  }
+}

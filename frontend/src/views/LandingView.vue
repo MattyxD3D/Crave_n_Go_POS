@@ -439,4 +439,34 @@ function goOrder() {
   opacity: 0;
   transform: translateX(-20px);
 }
+
+/* ── Mobile Optimization ─────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .landing-inner {
+    flex-direction: column;
+    padding: 5rem 1.5rem 2rem;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .hero-left {
+    align-items: center;
+  }
+
+  .brand-name {
+    font-size: 3rem;
+  }
+
+  .highlights {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .feature-card {
+    min-height: auto;
+  }
+
+  .flavor-strip {
+    padding: 0.75rem 1rem 1.5rem;
+  }
+}
 </style>

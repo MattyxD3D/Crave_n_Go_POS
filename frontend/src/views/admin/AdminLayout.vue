@@ -215,11 +215,47 @@ async function handleLogout() {
   border-color: var(--color-danger);
 }
 
-/* ── Main content ── */
 .admin-main {
   flex: 1;
   overflow-y: auto;
   background: var(--color-bg);
   min-width: 0;
+}
+
+/* ── Mobile Optimization ─────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .admin-layout {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: 1.5px solid var(--color-border);
+    flex-shrink: 0;
+  }
+  .sidebar-nav {
+    flex-direction: row;
+    overflow-x: auto;
+    padding: 0.5rem;
+    scrollbar-width: none;
+  }
+  .sidebar-nav::-webkit-scrollbar {
+    display: none;
+  }
+  .nav-link {
+    white-space: nowrap;
+  }
+  .sidebar-footer {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    border-top: 1px solid var(--color-border);
+  }
+  .btn-signout {
+    width: auto;
+    min-height: 32px;
+  }
 }
 </style>
