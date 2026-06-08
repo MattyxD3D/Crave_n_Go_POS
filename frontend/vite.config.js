@@ -4,7 +4,7 @@ import { VitePWA } from 'vite-plugin-pwa'
 import { fileURLToPath, URL } from 'node:url'
 
 export default defineConfig({
-  base: '/crave_n_go/',
+  base: '/Crave_n_Go_POS/',
   plugins: [
     vue(),
     VitePWA({
